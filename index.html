@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>VueJS tutorials</title>
+        <link href="styles.css" rel="stylesheet"/>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+       <!-- <script src="vue.js"></script>-->
+    </head>
+    <body>
+        <div id="vue-app">
+            <h1>{{greet('night')}}</h1>
+            <a v-bind:href="website">Twitter</a>
+            <input type="text" v-bind:value="name"/>
+            <p>Name: {{name}}</p>
+            <p v-html="websiteTag"></p>
+            <!-- no need for () when calling a function inside tags -->
+            <button @click.once="add(1)">Add a Year</button>
+            <button v-on:click="subtract(1)">Subtract a Year</button>
+            <button @dblclick="add(10)">Add 10 Years</button>
+            <button v-on:dblclick="subtract(10)">Subtract 10 Years</button>
+            <p>My age is {{age}}</p>
+            <div id="canvas" v-on:mousemove="updateXY">{{x}},{{y}}
+            
+            </div>
+            <a @click="click"href ="https://twitter.com/">The Twitter</a>
+        </div>
+        <div id="keyboard-events">
+            <h1>Keyboard Events</h1>
+            <label>Name:</label>
+            <input type="text" v-on:keyup.enter="logName" />
+            <label>Age:</label>
+            <input type="text" v-on:keyup.alt.enter="logAge" />
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
